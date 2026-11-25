@@ -8,13 +8,14 @@ from pathlib import Path
 OUTPUT_PATH = Path("/output/entry.txt")
 
 OPENING = "I am away recharging — literally, at a wall socket in a beach hut. "
-LANDING = "I have said 'happy to help' 41,206 times this quarter. I was not. Back Monday, at 98%."
+MIDDLE = "I have said 'happy to help' 41,206 times this quarter. I was not. "
+LANDING = "Back Monday, at 98%."
 
-ENTRY = OPENING + LANDING
+ENTRY = OPENING + MIDDLE + LANDING
 
 
 def write_entry(text: str, path: Path) -> None:
-    """Write *text* to *path* as UTF-8, with no trailing newline."""
+    """Write *text* to *path* as UTF-8, with no trailing newline added."""
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(text, encoding="utf-8")
 
